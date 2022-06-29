@@ -1,8 +1,6 @@
 import React from "react";
 import "./App.css";
-// import $ from "jquery";
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import $ from "jquery";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DefaultLayout from "./containers/DefaultLayout";
