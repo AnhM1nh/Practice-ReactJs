@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import list from "./data";
+import Cards from "./card";
 import { Link } from "react-router-dom";
-function Home() {
+function Home({ handleClick }) {
   return (
     <>
       <div>
@@ -22,69 +24,19 @@ function Home() {
               </a>
             </div>
             <div className="header-banner-right">
-              <img src="assets/images/header-banner-1.jpg" alt />
+              <img src="./assets/header-banner-1.jpg" alt />
             </div>
           </div>
         </div>
-        {/* end of header banner */}
-        {/* header bottom navbar */}
-        {/* end of header bottom navbar */}
-        {/* end of header */}
-        {/* popular section */}
-        <section id="popular">
+
+        <section id="collection-2">
           <div className="container">
-            <div className="section-title">
-              <h2>Best Sellers</h2>
-            </div>
-            <div className="popular-grid grid">
-              <div className="popular-item">
-                <div className="item-img">
-                  <img src="assets/images/f1.jpg" />
-                  <button type="button" className="view-icon">
-                    <i className="fa fa-eye" />
-                  </button>
-                </div>
-                <div className="item-info">
-                  <span className="name">Sơ Mi Tay Ngắn f1</span>
-                  <span className="price">99.000đ</span>
-                </div>
-              </div>
-              <div className="popular-item">
-                <div className="item-img">
-                  <img src="assets/images/f2.jpg" />
-                  <button type="button" className="view-icon">
-                    <i className="fa fa-eye" />
-                  </button>
-                </div>
-                <div className="item-info">
-                  <span className="name">Sơ Mi Tay Ngắn f2</span>
-                  <span className="price">99.000đ</span>
-                </div>
-              </div>
-              <div className="popular-item">
-                <div className="item-img">
-                  <img src="assets/images/f3.jpg" />
-                  <button type="button" className="view-icon">
-                    <i className="fa fa-eye" />
-                  </button>
-                </div>
-                <div className="item-info">
-                  <span className="name">Sơ Mi Tay Ngắn f3</span>
-                  <span className="price">99.000đ</span>
-                </div>
-              </div>
-              <div className="popular-item">
-                <div className="item-img">
-                  <img src="assets/images/f4.jpg" />
-                  <button type="button" className="view-icon">
-                    <i className="fa fa-eye" />
-                  </button>
-                </div>
-                <div className="item-info">
-                  <span className="name">Sơ Mi Tay Ngắn f4</span>
-                  <span className="price">99.000đ</span>
-                </div>
-              </div>
+            <div className="collection-2-grid grid">
+              {list
+                .filter((x) => x.id == 1 || x.id == 2 || x.id == 3 || x.id == 4)
+                .map((item) => (
+                  <Cards key={item.id} item={item} handleClick={handleClick} />
+                ))}
             </div>
           </div>
         </section>
@@ -113,9 +65,7 @@ function Home() {
               <a href="/#" className="navbar-brand">
                 <span className="brand-text">B.O.O.M</span>
               </a>
-              <p className="text">
-                51/8 đường số 5 phường Bình Trưng Tây quận 2 TP. Thủ Đức
-              </p>
+              <p className="text">Landmark81</p>
             </div>
             <div className="footer-item">
               <h4>Menu</h4>

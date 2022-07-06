@@ -1,15 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Header() {
+const Header = ({ setShow, size }) => {
   return (
     <>
       <div>
         <div className="header-top flex">
           <div className="container flex">
             <div className="header-top-left">
-              <span>boom@gmail.com</span>
-              <span>0337 493 650</span>
+              <span>
+                <i class="fas fa-envelope"></i> boom@gmail.com
+              </span>
+              <span>
+                <i class="fas fa-phone-alt"></i> 0337 493 650
+              </span>
             </div>
             <div className="header-top-right">
               <ul className="header-top-btns flex">
@@ -29,14 +33,10 @@ function Header() {
                   </a>
                 </li>
                 <li>
-                  <a to="/#" className="header-top-btn">
-                    Đăng nhập
-                  </a>
+                  <a to="/#" className="header-top-btn"></a>
                 </li>
                 <li>
-                  <a to="/#" className="header-top-btn">
-                    Đăng ký
-                  </a>
+                  <a to="/#" className="header-top-btn"></a>
                 </li>
               </ul>
             </div>
@@ -65,7 +65,9 @@ function Header() {
               </ul>
               {/* logo */}
               <Link to="/home" className="navbar-brand flex">
-                <span className="brand-text">B.O.O.M</span>
+                <span className="brand-text" onClick={() => setShow(true)}>
+                  B.O.O.M
+                </span>
               </Link>
               {/* end of logo */}
               <ul className="navbar-nav-right flex">
@@ -84,6 +86,12 @@ function Header() {
                     Liên Hệ
                   </Link>
                 </li>
+                <div className="cart" onClick={() => setShow(false)}>
+                  <span>
+                    <i class="fas fa-shopping-cart"></i>
+                  </span>
+                  <span>{size}</span>
+                </div>
               </ul>
               {/* menu icon */}
               <label
@@ -161,6 +169,6 @@ function Header() {
       </div>
     </>
   );
-}
+};
 
 export default Header;

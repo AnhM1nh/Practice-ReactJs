@@ -1,78 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import list from "./data";
+import Cards from "./card";
 import { Link } from "react-router-dom";
-function Men() {
+function Men({ handleClick }) {
   return (
     <>
       <div>
         <section id="collection-2">
           <div className="container">
-            <div className="section-title">
-              <h2>Những Bộ Sưu Tập Mới</h2>
-            </div>
             <div className="collection-2-grid grid">
-              <div className="collection-2-item">
-                <div className="item-img">
-                  <img src="assets/images/men1.jpg" />
-                </div>
-                <div className="item-info">
-                  <span className="name">MEN1</span>
-                  <span className="price">200.000Đ</span>
-                </div>
-              </div>
-              <div className="collection-2-item">
-                <div className="item-img">
-                  <img src="assets/images/men2.jpg" />
-                </div>
-                <div className="item-info">
-                  <span className="name">MEN2</span>
-                  <span className="price">250.000Đ</span>
-                </div>
-              </div>
-              <div className="collection-2-item">
-                <div className="item-img">
-                  <img src="assets/images/men3.jpg" />
-                </div>
-                <div className="item-info">
-                  <span className="name">MEN3</span>
-                  <span className="price">280.000Đ</span>
-                </div>
-              </div>
-              <div className="collection-2-item">
-                <div className="item-img">
-                  <img src="assets/images/men4.jpg" />
-                </div>
-                <div className="item-info">
-                  <span className="name">MEN4</span>
-                  <span className="price">210.000Đ</span>
-                </div>
-              </div>
-              <div className="collection-2-item">
-                <div className="item-img">
-                  <img src="assets/images/men5.jpg" />
-                </div>
-                <div className="item-info">
-                  <span className="name">MEN5</span>
-                  <span className="price">210.000Đ</span>
-                </div>
-              </div>
-              <div className="collection-2-item">
-                <div className="item-img">
-                  <img src="assets/images/men6.jpg" />
-                </div>
-                <div className="item-info">
-                  <span className="name">MEN6</span>
-                  <span className="price">210.000Đ</span>
-                </div>
-              </div>
-              <div className="collection-2-item">
-                <div className="item-img">
-                  <img src="assets/images/men7.jpg" />
-                </div>
-                <div className="item-info">
-                  <span className="name">MEN7</span>
-                  <span className="price">210.000Đ</span>
-                </div>
-              </div>
+              {list
+                .filter((x) => x.id == 6 || x.id == 7 || x.id == 8 || x.id == 9)
+                .map((item) => (
+                  <Cards key={item.id} item={item} handleClick={handleClick} />
+                ))}
             </div>
           </div>
         </section>
@@ -82,9 +23,7 @@ function Men() {
               <a href="/#" className="navbar-brand">
                 <span className="brand-text">B.O.O.M</span>
               </a>
-              <p className="text">
-                51/8 đường số 5 phường Bình Trưng Tây quận 2 TP. Thủ Đức
-              </p>
+              <p className="text">Landmark81</p>
             </div>
             <div className="footer-item">
               <h4>Menu</h4>

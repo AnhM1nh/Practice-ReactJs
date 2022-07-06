@@ -1,88 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+import list from "./data";
+import Cards from "./card";
 import { Link } from "react-router-dom";
-function Women() {
+function Women({ handleClick }) {
   return (
     <>
       <div>
         {/* --------------------------------------Heder----------------------- */}
         <section id="collection-2">
           <div className="container">
-            <div className="section-title">
-              <h2>Những Bộ Sưu Tập Mới</h2>
-            </div>
             <div className="collection-2-grid grid">
-              <div className="collection-2-item">
-                <div className="item-img">
-                  <img src="assets/images/women1.JPG" />
-                </div>
-                <div className="item-info">
-                  <span className="name">WM1</span>
-                  <span className="price">200.000Đ</span>
-                </div>
-              </div>
-              <div className="collection-2-item">
-                <div className="item-img">
-                  <img src="assets/images/women2.JPG" />
-                </div>
-                <div className="item-info">
-                  <span className="name">WM2</span>
-                  <span className="price">250.000Đ</span>
-                </div>
-              </div>
-              <div className="collection-2-item">
-                <div className="item-img">
-                  <img src="assets/images/women3.JPG" />
-                </div>
-                <div className="item-info">
-                  <span className="name">WM3</span>
-                  <span className="price">280.000Đ</span>
-                </div>
-              </div>
-              <div className="collection-2-item">
-                <div className="item-img">
-                  <img src="assets/images/women4.JPG" />
-                </div>
-                <div className="item-info">
-                  <span className="name">WM4</span>
-                  <span className="price">210.000Đ</span>
-                </div>
-              </div>
-              <div className="collection-2-item">
-                <div className="item-img">
-                  <img src="assets/images/women5.JPG" />
-                </div>
-                <div className="item-info">
-                  <span className="name">WM5</span>
-                  <span className="price">240.000Đ</span>
-                </div>
-              </div>
-              <div className="collection-2-item">
-                <div className="item-img">
-                  <img src="assets/images/women6.JPG" />
-                </div>
-                <div className="item-info">
-                  <span className="name">WM6</span>
-                  <span className="price">200.000Đ</span>
-                </div>
-              </div>
-              <div className="collection-2-item">
-                <div className="item-img">
-                  <img src="assets/images/women7.JPG" />
-                </div>
-                <div className="item-info">
-                  <span className="name">WM7</span>
-                  <span className="price">99.99Đ</span>
-                </div>
-              </div>
-              <div className="collection-2-item">
-                <div className="item-img">
-                  <img src="assets/images/women8.JPG" />
-                </div>
-                <div className="item-info">
-                  <span className="name">WM8</span>
-                  <span className="price">199.99Đ</span>
-                </div>
-              </div>
+              {list
+                .filter(
+                  (x) => x.id == 10 || x.id == 11 || x.id == 12 || x.id == 13
+                )
+                .map((item) => (
+                  <Cards key={item.id} item={item} handleClick={handleClick} />
+                ))}
             </div>
           </div>
         </section>
@@ -92,9 +26,7 @@ function Women() {
               <a href="/#" className="navbar-brand">
                 <span className="brand-text">B.O.O.M</span>
               </a>
-              <p className="text">
-                51/8 đường số 5 phường Bình Trưng Tây quận 2 TP. Thủ Đức
-              </p>
+              <p className="text">Landmark81</p>
             </div>
             <div className="footer-item">
               <h4>Menu</h4>

@@ -39,9 +39,7 @@ function Lienhe() {
               <a href="/#" className="navbar-brand">
                 <span className="brand-text">B.O.O.M</span>
               </a>
-              <p className="text">
-                51/8 đường số 5 phường Bình Trưng Tây quận 2 TP. Thủ Đức
-              </p>
+              <p className="text">Landmark81</p>
             </div>
             <div className="footer-item">
               <h4>Menu</h4>

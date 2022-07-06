@@ -1,52 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
+import list from "./data";
+import Cards from "./card";
 import { Link } from "react-router-dom";
 
-function Children() {
+function Children({ handleClick }) {
   return (
     <>
       <div>
         <section id="collection-2">
           <div className="container">
-            <div className="section-title">
-              <h2>Những Bộ Sưu Tập Mới</h2>
-            </div>
             <div className="collection-2-grid grid">
-              <div className="collection-2-item">
-                <div className="item-img">
-                  <img src="assets/images/f1.jpg" />
-                </div>
-                <div className="item-info">
-                  <span className="name">F1</span>
-                  <span className="price">200.000Đ</span>
-                </div>
-              </div>
-              <div className="collection-2-item">
-                <div className="item-img">
-                  <img src="assets/images/f2.jpg" />
-                </div>
-                <div className="item-info">
-                  <span className="name">F2</span>
-                  <span className="price">250.000Đ</span>
-                </div>
-              </div>
-              <div className="collection-2-item">
-                <div className="item-img">
-                  <img src="assets/images/f3.jpg" />
-                </div>
-                <div className="item-info">
-                  <span className="name">F3</span>
-                  <span className="price">280.000Đ</span>
-                </div>
-              </div>
-              <div className="collection-2-item">
-                <div className="item-img">
-                  <img src="assets/images/f4.jpg" />
-                </div>
-                <div className="item-info">
-                  <span className="name">F4</span>
-                  <span className="price">210.000Đ</span>
-                </div>
-              </div>
+              {list
+                .filter(
+                  (x) =>
+                    x.id == 1 ||
+                    x.id == 2 ||
+                    x.id == 3 ||
+                    x.id == 4 ||
+                    x.id == 5
+                )
+                .map((item) => (
+                  <Cards key={item.id} item={item} handleClick={handleClick} />
+                ))}
             </div>
           </div>
         </section>
@@ -56,9 +31,7 @@ function Children() {
               <a href="/#" className="navbar-brand">
                 <span className="brand-text">B.O.O.M</span>
               </a>
-              <p className="text">
-                51/8 đường số 5 phường Bình Trưng Tây quận 2 TP. Thủ Đức
-              </p>
+              <p className="text">Landmark81</p>
             </div>
             <div className="footer-item">
               <h4>Menu</h4>
